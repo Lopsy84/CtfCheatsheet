@@ -10,7 +10,7 @@
       invoke-allchecks
     dir \ /s/b | find ""
     findstr /sp administrator *
-    ```
+```
 ## linux
     ```sudo -l
     linpeas
