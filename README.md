@@ -181,6 +181,7 @@ export PATH=.:$PATH
   ```
   winrm quickconfig
   winrm set winrm/config/client @{TrustedHosts="10.10.11.202"}
+  Set-Item wsman:localhost\client\trustedhosts -Value 192.168.56.105 -Concatenate
   Enter-PSSession -ComputerName 10.10.11.202 -Credential sequel\sql_svc
   $session = New-PSSession -ComputerName 10.10.11.202 -Credential sequel.htb\Ryan.Cooper
   Copy-Item -Recurse "C:\Users\Administrator\Htb\www\winpeasx64.exe" -Destination "C:\Users\Ryan.Cooper\Documents\" -ToSession $Session
