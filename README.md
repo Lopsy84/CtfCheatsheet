@@ -69,6 +69,10 @@ export PATH=.:$PATH
   ```
   echo "public key" > root/.ssh/authorized_keys
   ```
+## mssql
+  ```
+  C:\Windows\System32\runas.exe /netonly /user:ARCHETYPE\sql_svc "C:\Program Files (x86)\Microsoft SQL Server Management Studio 20\Common7\IDE\Ssms.exe"
+  ```
 ## mysql
   ```
   mysql -u user -p
