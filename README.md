@@ -53,7 +53,7 @@ export PATH=.:$PATH
   file_get_contents("/home/nairobi/ca.key")
   file_put_contents("/home/nairobi/ca.key")
   ```
-## ntlm
+## wireshark ntlm
   ```
   user::domainname:serverchallenge:NTProofstring:Ntlmv2response
   ```
